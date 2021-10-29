@@ -52,10 +52,15 @@
           if (amount > 50) {
             alert('Por temas de rendimiento el número de elementos no puede ser mayor a 50')
             amount = 5
-            this.amount = amount
           }
+          
+          if (amount < 0) {
+            amount = 1
+          }
+          
+          this.amount = amount
 
-          return new Array(amount > 0 ? amount : 1).fill(0)
+          return new Array(amount).fill(0)
         }
       }
     })
